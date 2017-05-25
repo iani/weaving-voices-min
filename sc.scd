@@ -19,6 +19,18 @@ Server.default.waitForBoot({
 	{
 		var paths, buffers;
 
+		/*
+		SynthDef("playbuf", { | buf, gate = 1, rate = 1, amp = 1 |
+			var env;
+
+			env = Env.adsr(sustainLevel: 1);
+			Out.ar(
+				0,
+				PlayBuf.ar()
+				
+
+		});
+		*/
 		paths = "/home/pi/dev/weavingvoices/weaving-voices-samples/*.wav".pathMatch;
 
 		buffers = paths collect: { | path | Buffer.read(Server.default, path) };
